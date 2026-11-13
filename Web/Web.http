@@ -1,0 +1,95 @@
+@Web_HostAddress = https://localhost:7126
+
+### 
+POST {{Web_HostAddress}}/api/users
+Content-Type: application/json
+
+{
+  "fullName": "Satıcı Əli",
+  "email": "seller@mail.com",
+  "role": 1
+}
+
+### 
+POST {{Web_HostAddress}}/api/users
+Content-Type: application/json
+                                                                                                      
+{
+  "fullName": "Alıcı Vüqar",
+  "email": "buyer@mail.com",
+  "role": 2
+}
+
+### 
+POST {{Web_HostAddress}}/api/stores
+Content-Type: application/json
+
+{
+  "name": "TexnoMarket",
+  "description": "Elektronika mağazası",
+  "sellerId": 1
+}
+
+### 
+POST {{Web_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "name": "Telefon"
+}
+
+### 
+POST {{Web_HostAddress}}/api/products
+Content-Type: application/json
+
+{
+  "name": "iPhone",
+  "price": 1000,
+  "stockQuantity": 10,
+  "storeId": 1,
+  "categoryId": 1
+}
+
+### 
+GET {{Web_HostAddress}}/api/stores
+
+### 
+GET {{Web_HostAddress}}/api/stores/1/products
+
+### 
+GET {{Web_HostAddress}}/api/categories
+
+### 
+GET {{Web_HostAddress}}/api/products?name=iph
+
+### 
+GET {{Web_HostAddress}}/api/products?categoryId=1&minPrice=500&maxPrice=1500
+
+### 
+GET {{Web_HostAddress}}/api/products/1
+
+### 
+POST {{Web_HostAddress}}/api/orders
+Content-Type: application/json
+
+{
+  "buyerId": 2,
+  "productId": 1,
+  "quantity": 3
+}
+
+### 
+GET {{Web_HostAddress}}/api/products/1
+
+### 
+GET {{Web_HostAddress}}/api/orders/user/2
+
+### 
+POST {{Web_HostAddress}}/api/orders
+Content-Type: application/json
+
+{
+  "buyerId": 2,
+  "productId": 1,
+  "quantity": 50
+}
